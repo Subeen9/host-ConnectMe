@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Information</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Contact Information</h1>
-  <p><strong>Name:</strong> <span id="name"></span></p>
-  <p><strong>Email:</strong> <span id="email"></span></p>
-  <p><strong>Phone:</strong> <span id="phone"></span></p>
-  <p><strong>Organization:</strong> <span id="organization"></span></p>
-  <p><strong>Title:</strong> <span id="title"></span></p>
+  <div class="contact-card">
+    
+    <p class='name'><strong></strong> <span id="name"></span></p>
+    <p><strong></strong> <span id="organization"></span></p>
+    <p><i class="fas fa-envelope"></i><span id="email"></span></p>
+    <p><i class="fas fa-phone"></i></strong> <span id="phone"></span></p>
+    <p><i class="fas fa-briefcase"></i><span id="title"></span></p>
+  </div>
+
+ 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     document.getElementById('name').textContent = urlParams.get('name');
@@ -20,5 +25,6 @@
     document.getElementById('organization').textContent = urlParams.get('organization');
     document.getElementById('title').textContent = urlParams.get('title');
   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" ></script>
 </body>
 </html>
