@@ -8,23 +8,48 @@
 </head>
 <body>
   <div class="contact-card">
-    
-    <p class='name'><strong></strong> <span id="name"></span></p>
-    <p><strong></strong> <span id="organization"></span></p>
-    <p><i class="fas fa-envelope"></i><span id="email"></span></p>
-    <p><i class="fas fa-phone"></i></strong> <span id="phone"></span></p>
-    <p><i class="fas fa-briefcase"></i><span id="title"></span></p>
+    <p class='name'><strong>Name: </strong><span id="name"></span></p>
+    <p><strong>Organization: </strong><span id="organization"></span></p>
+    <p><strong>Email: </strong><a href="" id="email" target="_blank"><i class="fas fa-envelope"></i><span id="email-text"></span></a></p>
+    <p><strong>Phone: </strong><a href="" id="phone" target="_blank"><i class="fas fa-phone"></i><span id="phone-text"></span></a></p>
+    <p><strong>Title: </strong><span id="title"></span></p>
+
+    <!-- LinkedIn Icon at the bottom center -->
+    <div class="linkedin-container">
+      <a href="" id="linkedin" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
   </div>
 
- 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     document.getElementById('name').textContent = urlParams.get('name');
-    document.getElementById('email').textContent = urlParams.get('email');
-    document.getElementById('phone').textContent = urlParams.get('phone');
     document.getElementById('organization').textContent = urlParams.get('organization');
     document.getElementById('title').textContent = urlParams.get('title');
+
+    // Set the email, phone, and LinkedIn URL dynamically
+    const email = urlParams.get('email');
+    const phone = urlParams.get('phone');
+    const linkedinUrl = urlParams.get('linkedIn');
+
+    // Set the href for email and phone
+    if (email) {
+      document.getElementById('email').href = `mailto:${email}`;
+      document.getElementById('email-text').textContent = email;
+    }
+
+    if (phone) {
+      document.getElementById('phone').href = `tel:${phone}`;
+      document.getElementById('phone-text').textContent = phone;
+    }
+
+    if (linkedinUrl) {
+      document.getElementById('linkedin').href = linkedinUrl;
+    }
   </script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" ></script>
+
+  <!-- FontAwesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
 </body>
 </html>
