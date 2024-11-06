@@ -54,8 +54,8 @@ i {
 /* LinkedIn Icon at the bottom center */
 .linkedin-container {
   display: flex;
-  justify-content: center;  /* Align the icon horizontally */
-  margin-top: 20px;  /* Space above the LinkedIn icon */
+  justify-content: center;  
+  margin-top: 20px;  
 }
 
 .linkedin-container a {
