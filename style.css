@@ -1,62 +1,38 @@
+/* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
-  background: #f4f4f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
+  padding: 0;
+margin-top: 280px;
 }
 
 .contact-card {
   display: flex;
-  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
   max-width: 800px;
-  height: 350px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  background: #ffffff;
+  margin: 20px auto;
+  background-color: #000;
+  border: 1px solid #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .left-side {
-  flex: 1;
-  padding: 20px;
-  background: #f2f6fc;
-}
-
-.right-side {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0077b5;
-  color: white;
-  font-family: 'Georgia', serif;
-}
-
-.name {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #0077b5;
-  margin-bottom: 8px;
-}
-
-.organization {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #333;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.contact-details p {
-  font-size: 1rem;
-  color: #555;
+.left-side p, .left-side a {
   margin: 10px 0;
 }
 
 .contact-details a {
-  color: #0077b5;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -64,53 +40,72 @@ body {
   text-decoration: underline;
 }
 
-.separator {
-  width: 2px;
-  background: #0077b5;
-  border-radius: 5px;
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: 700;
-  text-decoration: curve;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: white;
-  text-align: center;
-}
-
-.linkedin-container {
-  margin-top: 20px;
-  text-align: center;
-}
-
 .linkedin-container a {
-  font-size: 2rem;
-  color: blue;
-  text-decoration: none;
-  transition: transform 0.3s ease;
+  color: #0077b5;
+  font-size: 24px;
 }
 
-.linkedin-container a:hover {
-  transform: scale(1.2);
-}
-
-.contact-card .separator {
-  margin: 0 20px;
-  border-top: 2px solid #0077b5;
-  height: 100%;
-}
-
-.left-side .contact-details p i {
-  margin-right: 8px;
-}
-
-/* Curved separator between left and right side */
 .separator {
-  position: relative;
-  margin-left: -30px;
-  width: 60px;
-  background: linear-gradient(135deg, transparent, #0077b5);
-  border-radius: 50%;
+  display: none; /* Remove separator for mobile screens */
+}
+
+.right-side {
+  text-align: center;
+}
+
+.right-side .logo {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+  .contact-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .left-side {
+    flex: 2;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .separator {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    margin: 0 20px;
+  }
+
+  .right-side {
+    flex: 1;
+  }
+
+  .right-side .logo {
+    font-size: 28px;
+  }
+}
+
+/* Mobile-Specific Optimization */
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 15px;
+  }
+
+  .left-side {
+    font-size: 14px;
+  }
+
+  .right-side .logo {
+    font-size: 20px;
+  }
+
+  .linkedin-container a {
+    font-size: 20px;
+  }
 }
