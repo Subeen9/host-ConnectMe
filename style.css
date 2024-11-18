@@ -1,13 +1,17 @@
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #000;
   margin: 0;
   padding: 0;
-margin-top: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+/* Contact Card Styling */
 .contact-card {
   display: flex;
   flex-direction: column;
@@ -15,24 +19,28 @@ margin-top: 280px;
   width: 90%;
   max-width: 800px;
   margin: 20px auto;
-  background-color: #000;
-  border: 1px solid #fff;
+  background-color: #ffffff; /* White background */
+  border: 2px solid #0077b5; /* Blue border */
+  border-radius: 15px;
   padding: 20px;
-  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Subtle shadow */
   box-sizing: border-box;
+  overflow: hidden;
 }
 
+/* Left-Side Styling */
 .left-side {
-  text-align: center;
-  margin-bottom: 20px;
+  text-align: left;
+  align-self: flex-start; /* Align content to the left */
 }
 
 .left-side p, .left-side a {
   margin: 10px 0;
+  color: #333;
 }
 
 .contact-details a {
-  color: #fff;
+  color: #0077b5; /* Blue text for links */
   text-decoration: none;
 }
 
@@ -40,23 +48,57 @@ margin-top: 280px;
   text-decoration: underline;
 }
 
+/* LinkedIn Styling */
 .linkedin-container a {
-  color: #0077b5;
+  color: #0077b5; /* Blue for LinkedIn */
   font-size: 24px;
+  transition: transform 0.3s ease;
 }
 
+.linkedin-container a:hover {
+  transform: scale(1.2); /* Subtle zoom on hover */
+}
+
+/* Separator (if needed) */
 .separator {
-  display: none; /* Remove separator for mobile screens */
+  display: none; /* Hide for small screens */
 }
 
+/* Right-Side Styling */
 .right-side {
   text-align: center;
+  padding: 20px 0;
 }
 
 .right-side .logo {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   line-height: 1.2;
+  color: transparent;
+  background: linear-gradient(90deg, #0077b5, #00bfff); /* Gradient blue shades */
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  position: relative;
+}
+
+.right-side .logo:before,
+.right-side .logo:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 100px; /* Length of the lines */
+  height: 2px; /* Thickness of the lines */
+  background: #0077b5; /* Blue lines */
+  transform: translateY(-50%);
+}
+
+.right-side .logo:before {
+  left: -110px; /* Spacing from text */
+}
+
+.right-side .logo:after {
+  right: -110px; /* Spacing from text */
 }
 
 /* Responsive Design */
@@ -78,7 +120,7 @@ margin-top: 280px;
     display: block;
     width: 1px;
     height: 100%;
-    background-color: #fff;
+    background-color: #0077b5; /* Blue separator */
     margin: 0 20px;
   }
 
@@ -87,11 +129,10 @@ margin-top: 280px;
   }
 
   .right-side .logo {
-    font-size: 28px;
+    font-size: 32px;
   }
 }
 
-/* Mobile-Specific Optimization */
 @media (max-width: 480px) {
   .contact-card {
     padding: 15px;
@@ -102,7 +143,7 @@ margin-top: 280px;
   }
 
   .right-side .logo {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .linkedin-container a {
